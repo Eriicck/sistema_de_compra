@@ -1,0 +1,16 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: 'Inter', sans-serif; /* Fuente principal para todo el texto */
+    background-color: #f3f4f6; /* Un gris claro para el fondo, que va bien con Tailwind */
+}
+
+/* Estilos personalizados para los inputs de tipo número (para esconder las flechas) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Oculta las flechas de incremento/decremento en navegadores WebKit (Chrome, Safari) */
+    margin: 0; /* Elimina el margen por defecto */
+}
+input[type="number"] {
+    -moz-appearance: textfield; /* Oculta las flechas en Firefox */
+}
+

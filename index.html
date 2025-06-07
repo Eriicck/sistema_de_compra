@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacén Mayor y Detal - Tu Tienda Online</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Enlace a Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace a nuestro archivo CSS personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col items-center p-4 sm:p-6 lg:p-8">
+
+    <!-- Encabezado de la Tienda -->
+    <header class="w-full max-w-4xl bg-white shadow-lg rounded-xl p-6 mb-8 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Tu Almacén Online</h1>
+        <p class="text-md sm:text-lg text-gray-600">Precios al por mayor y al detalle para vos.</p>
+    </header>
+
+    <!-- Contenedor Principal de la Tienda -->
+    <main class="w-full max-w-4xl flex flex-col lg:flex-row gap-8">
+
+        <!-- Sección de Productos -->
+        <section class="flex-1 bg-white shadow-lg rounded-xl p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Nuestros Productos</h2>
+
+            <!-- Filtro de Categorías -->
+            <div class="mb-6 flex flex-wrap gap-3">
+                <button onclick="filterProducts('all')" class="category-btn bg-blue-600 text-white px-4 py-2 rounded-lg font-medium shadow hover:bg-blue-700 transition-colors">Todos</button>
+                <button onclick="filterProducts('bebidas')" class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors">Bebidas</button>
+                <button onclick="filterProducts('galletitas')" class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors">Galletitas</button>
+                <button onclick="filterProducts('alcohol')" class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors">Alcohol</button>
+                <button onclick="filterProducts('enlatados')" class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors">Enlatados</button>
+            </div>
+
+            <!-- Contenedor de Productos -->
+            <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+            </div>
+        </section>
+
+        <!-- Sección del Pedido (Carrito) -->
+        <aside class="w-full lg:w-96 bg-white shadow-lg rounded-xl p-6 sticky top-4 self-start">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Tu Pedido</h2>
+            <div id="cart-items" class="mb-4">
+                <!-- Los ítems del carrito se cargarán aquí con JavaScript -->
+                <p class="text-gray-500 text-center" id="empty-cart-message">El carrito está vacío.</p>
+            </div>
+
+            <div class="border-t border-gray-200 pt-4 mt-4">
+                <div class="flex justify-between items-center text-lg font-bold text-gray-900 mb-4">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+
+                <!-- Formulario de Contacto y Notas -->
+                <div class="mb-6">
+                    <label for="client-name" class="block text-gray-700 text-sm font-medium mb-2">Tu Nombre:</label>
+                    <input type="text" id="client-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="mb-6">
+                    <label for="client-address" class="block text-gray-700 text-sm font-medium mb-2">Tu Dirección:</label>
+                    <input type="text" id="client-address" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ej: Av. Principal 1234, Dpto 5B">
+                </div>
+                <div class="mb-6">
+                    <label for="order-notes" class="block text-gray-700 text-sm font-medium mb-2">Notas Adicionales (Opcional):</label>
+                    <textarea id="order-notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y" placeholder="Ej: Entregar por la mañana, sin cebolla, etc."></textarea>
+                </div>
+
+                <!-- Botón de Enviar Pedido por WhatsApp -->
+                <button onclick="sendOrderToWhatsApp()" class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition-colors transform hover:scale-105">
+                    Enviar Pedido por WhatsApp
+                </button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Enlace a nuestro archivo JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
