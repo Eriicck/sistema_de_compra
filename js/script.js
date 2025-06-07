@@ -1,15 +1,15 @@
 // --- Datos de los Productos ---
 // Aquí puedes agregar más productos y categorías
 const products = [
-    { id: 'coca', name: 'Coca-Cola 2.25L', image: 'https://placehold.co/150x150/F87171/FFFFFF?text=Coca-Cola', priceDetal: 1200, priceMayor: 1000, category: 'bebidas' },
-    { id: 'pepsi', name: 'Pepsi 2.25L', image: 'https://placehold.co/150x150/3B82F6/FFFFFF?text=Pepsi', priceDetal: 1150, priceMayor: 950, category: 'bebidas' },
-    { id: 'manaos', name: 'Manaos Cola 2.25L', image: 'https://placehold.co/150x150/A78BFA/FFFFFF?text=Manaos', priceDetal: 800, priceMayor: 650, category: 'bebidas' },
-    { id: 'galleta-choc', name: 'Galletitas Chocolate', image: 'https://placehold.co/150x150/8B5CF6/FFFFFF?text=Galleta', priceDetal: 450, priceMayor: 380, category: 'galletitas' },
-    { id: 'galleta-vain', name: 'Galletitas Vainilla', image: 'https://placehold.co/150x150/EC4899/FFFFFF?text=Galleta', priceDetal: 400, priceMayor: 350, category: 'galletitas' },
-    { id: 'cerveza', name: 'Cerveza Quilmes Litro', image: 'https://placehold.co/150x150/F59E0B/FFFFFF?text=Cerveza', priceDetal: 1500, priceMayor: 1300, category: 'alcohol' },
-    { id: 'vino', name: 'Vino Tinto 750ml', image: 'https://placehold.co/150x150/991B1B/FFFFFF?text=Vino', priceDetal: 2500, priceMayor: 2200, category: 'alcohol' },
-    { id: 'atun', name: 'Atún en Lata 170g', image: 'https://placehold.co/150x150/06B6D4/FFFFFF?text=Atun', priceDetal: 900, priceMayor: 780, category: 'enlatados' },
-    { id: 'arvejas', name: 'Arvejas en Lata 300g', image: 'https://placehold.co/150x150/10B981/FFFFFF?text=Arvejas', priceDetal: 600, priceMayor: 500, category: 'enlatados' },
+    { id: 'coca', name: 'Coca-Cola 2.25L', image: 'https://falconfresh.com/media/catalog/product/cache/0e405ab110ef006cccff6c2150b91e32/3/5/3532_3nd.jpg', priceDetal: 1200, priceMayor: 1000, category: 'bebidas' },
+    { id: 'pepsi', name: 'Pepsi 2.25L', image: 'https://www.casa-segal.com/wp-content/uploads/2020/08/pepsi-2-25-supermercado-casa-segal-mendoza.jpg', priceDetal: 1150, priceMayor: 950, category: 'bebidas' },
+    { id: 'manaos', name: 'Manaos Cola 2.25L', image: 'https://file.nubing.com.ar/product/6e757326-6ffe-43fe-8cd7-032dd9951b63_FULL.jpg', priceDetal: 800, priceMayor: 650, category: 'bebidas' },
+    { id: 'galleta-choc', name: 'Galletitas Chocolate', image: 'https://distribuidorafresh.com.ar/wp-content/uploads/2024/01/CHIPSDECHOCOLATE.webp', priceDetal: 450, priceMayor: 380, category: 'galletitas' },
+    { id: 'galleta-vain', name: 'Galletitas Vainilla', image: 'https://dcdn-us.mitiendanube.com/stores/001/151/835/products/77906281026841-d97c467b78cacde5ba15982919398153-1024-1024.jpg', priceDetal: 400, priceMayor: 350, category: 'galletitas' },
+    { id: 'cerveza', name: 'Cerveza Quilmes Litro', image: 'https://static.wixstatic.com/media/d2b1c5_252fb740d86f4fee93b9d1e907648a7f~mv2_d_1728_1928_s_2.png/v1/fill/w_480,h_536,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d2b1c5_252fb740d86f4fee93b9d1e907648a7f~mv2_d_1728_1928_s_2.png', priceDetal: 1500, priceMayor: 1300, category: 'alcohol' },
+    { id: 'vino', name: 'Vino Tinto 750ml', image: 'https://ardiaprod.vtexassets.com/arquivos/ids/320321/Vino-Tinto-Seleccion-Toro-Clasico-750-Ml-_1.jpg?v=638599515980800000', priceDetal: 2500, priceMayor: 2200, category: 'alcohol' },
+    { id: 'atun', name: 'Atún en Lata 170g', image: 'https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/2400049_f.jpg', priceDetal: 900, priceMayor: 780, category: 'enlatados' },
+    { id: 'arvejas', name: 'Arvejas en Lata 300g', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkA87ownqkcwoazTLq2BpCnvuLI7aPk81bCg&s', priceDetal: 600, priceMayor: 500, category: 'enlatados' },
 ];
 
 // --- Configuración de WhatsApp ---
