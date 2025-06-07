@@ -14,3 +14,42 @@ input[type="number"] {
     -moz-appearance: textfield; /* Oculta las flechas en Firefox */
 }
 
+/* --- Estilos para el Banner Rotativo --- */
+#banner-carousel {
+    display: flex; /* Asegura que las imágenes se alineen horizontalmente */
+    width: 100%; /* El contenedor del carrusel ocupará todo el ancho disponible */
+    position: relative; /* Importante para el posicionamiento absoluto de las imágenes dentro */
+    /* La transición para el movimiento automático se manejará con JS */
+}
+
+/* Contenedor individual para cada imagen del banner para mantener el aspecto ratio */
+.banner-image-container {
+    width: 100%; /* Cada contenedor ocupará el 100% del ancho del carrusel */
+    position: relative; /* Necesario para posicionar la imagen absolutamente dentro */
+    padding-bottom: 33.33%; /* Truco para el aspecto ratio 3:1 (alto / ancho = 400/1200) */
+    overflow: hidden; /* Asegura que la imagen no se desborde del contenedor de aspecto */
+    flex-shrink: 0; /* Evita que los contenedores se encojan en el flexbox */
+}
+
+.banner-image-container img {
+    position: absolute; /* Posiciona la imagen dentro de su contenedor de aspecto */
+    top: 0;
+    left: 0;
+    width: 100%; /* La imagen ocupa todo el ancho de su contenedor */
+    height: 100%; /* La imagen ocupa toda la altura de su contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse, recortando si es necesario */
+    border-radius: 0.75rem; /* rounded-xl de Tailwind (aplicado también al img para bordes redondeados) */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg de Tailwind */
+}
+
+/* Estilo para los puntos de navegación activos del banner */
+.banner-dot.active {
+    opacity: 1; /* Opacidad completa para el punto activo */
+    background-color: #3B82F6; /* Color de Tailwind blue-600 para el punto activo */
+}
+
+/* Asegura que los SVGs dentro de la página mantengan su tamaño definido */
+svg {
+    display: inline-block; /* Para asegurar que se comporten como elementos de línea con ancho y alto */
+    vertical-align: middle; /* Para alinear con el texto si están junto a él */
+}

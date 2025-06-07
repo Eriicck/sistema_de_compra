@@ -19,12 +19,44 @@
         <p class="text-md sm:text-lg text-gray-600">Precios al por mayor y al detalle para vos.</p>
     </header>
 
+    <!-- Banner Rotativo (Slider) -->
+    <section class="w-full max-w-4xl bg-white shadow-lg rounded-xl overflow-hidden mb-8 relative">
+        <div id="banner-carousel" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Cada imagen del banner ahora está dentro de un contenedor para mantener el aspecto ratio -->
+            <div class="banner-image-container">
+                <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/L4TO6YL7ZNGBPPKLA3MHHF7G3Q.jpg" alt="Ofertas Imperdibles" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/9CA3AF/FFFFFF?text=Error+Cargando+Imagen';" data-index="0">
+            </div>
+            <div class="banner-image-container hidden">
+                <img src="https://www.vital.com.ar/wp-content/uploads/2025/04/bancos-Mayo-desktop-1-100.jpg" alt="Envio Gratis" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/9CA3AF/FFFFFF?text=Error+Cargando+Imagen';" data-index="1">
+            </div>
+            <div class="banner-image-container hidden">
+                <img src="https://www.vital.com.ar/wp-content/uploads/2024/12/Modo_desktop.jpg?x17088" alt="Nueva Temporada" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/9CA3AF/FFFFFF?text=Error+Cargando+Imagen';" data-index="2">
+            </div>
+        </div>
+        <!-- Puntos de Navegación del Banner -->
+        <div id="banner-dots" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button class="banner-dot w-3 h-3 bg-white rounded-full opacity-60 hover:opacity-100 transition-opacity" data-index="0"></button>
+            <button class="banner-dot w-3 h-3 bg-white rounded-full opacity-60 hover:opacity-100 transition-opacity" data-index="1"></button>
+            <button class="banner-dot w-3 h-3 bg-white rounded-full opacity-60 hover:opacity-100 transition-opacity" data-index="2"></button>
+        </div>
+    </section>
+
     <!-- Contenedor Principal de la Tienda -->
     <main class="w-full max-w-4xl flex flex-col lg:flex-row gap-8">
 
         <!-- Sección de Productos -->
         <section class="flex-1 bg-white shadow-lg rounded-xl p-6">
             <h2 class="text-2xl font-semibold text-gray-800 mb-6">Nuestros Productos</h2>
+
+            <!-- Search Input with Icon -->
+            <div class="mb-6 relative">
+                <input type="text" id="search-input" placeholder="Buscar productos..."
+                       class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                       oninput="searchProducts()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2">
+                    <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.697 4.698a.75.75 0 1 1-1.06 1.06l-4.698-4.697A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+                </svg>
+            </div>
 
             <!-- Filtro de Categorías -->
             <div class="mb-6 flex flex-wrap gap-3">
@@ -33,6 +65,7 @@
                 <button onclick="filterProducts('galletitas')" class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors">Galletitas</button>
                 <button onclick="filterProducts('alcohol')" class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors">Alcohol</button>
                 <button onclick="filterProducts('enlatados')" class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors">Enlatados</button>
+                <button onclick="filterProducts('lacteos')" class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors">Lácteos</button>
             </div>
 
             <!-- Contenedor de Productos -->
@@ -42,7 +75,7 @@
         </section>
 
         <!-- Sección del Pedido (Carrito) -->
-        <aside class="w-full lg:w-96 bg-white shadow-lg rounded-xl p-6 sticky top-4 self-start">
+        <aside id="cart-aside" class="w-full lg:w-96 bg-white shadow-lg rounded-xl p-6 sticky top-4 self-start">
             <h2 class="text-2xl font-semibold text-gray-800 mb-6">Tu Pedido</h2>
             <div id="cart-items" class="mb-4">
                 <!-- Los ítems del carrito se cargarán aquí con JavaScript -->
@@ -76,6 +109,15 @@
             </div>
         </aside>
     </main>
+
+    <!-- Floating Cart Icon -->
+    <div id="floating-cart-icon" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-blue-700 transition-colors z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.75 3.75 0 0 0 3.694 2.46l5.58 1.488a2.25 2.25 0 1 0 .964 4.5c.59 0 1.14-.159 1.625-.447a.75.75 0 0 0-.936-1.067 1.25 1.25 0 0 1-.539.309.75.75 0 0 1-.741-.592l-.588-2.353a.75.75 0 0 0-.175-.25L10.74 12H16.5a.75.75 0 0 0 .736-.61l.94-4.704a.75.75 0 0 0-.256-.713A48.75 48.75 0 0 0 12 7.5a48.75 48.75 0 0 0-4.97-.549L5.023 2.564a.75.75 0 0 0-.72-.564H2.25Z" />
+        </svg>
+        <span id="floating-cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-0.5">0</span>
+    </div>
+
 
     <!-- Enlace a nuestro archivo JavaScript -->
     <script src="js/script.js"></script>
