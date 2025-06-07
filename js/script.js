@@ -24,7 +24,7 @@ const products = [
 // --- Configuración de WhatsApp ---
 // REEMPLAZA ESTE NÚMERO con el número de WhatsApp de tu negocio (incluye código de país y área, sin '+' ni '00')
 // Ej: '5491112345678' para Argentina (54), Buenos Aires (911), y un número (12345678)
-const WHATSAPP_NUMBER = '5491123456789'; // EJEMPLO: Reemplaza con tu número real
+const WHATSAPP_NUMBER = '5491136013353'; // EJEMPLO: Reemplaza con tu número real
 
 // --- Estado del Carrito ---
 let cart = []; // Almacena { productId, name, quantity, pricePerUnit, typePrice }
